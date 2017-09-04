@@ -22,6 +22,23 @@ describe('createHypernovaMiddleware()', () => {
 		expect(typeof createHypernovaMiddleware).toBe('function');
 	});
 
+	it('should throw an error if no "renderer" option was passed.', () => {
+		expect(() => createHypernovaMiddleware({})).toThrow();
+	});
+
+	it('should throw an error if no "templatePath" option was passed.', () => {
+		const renderer = {render: () => Promise.resolve()};
+
+		expect(() => createHypernovaMiddleware({renderer})).toThrow();
+	});
+
+	it('should throw an error if no "createRequestProps" option was passed.', () => {
+		const renderer = {render: () => Promise.resolve()};
+		const templatePath = '/foo/bar.html';
+
+		expect(() => createHypernovaMiddleware({renderer, templatePath})).toThrow();
+	});
+
 	it('should return a middleware function when called.', () => {
 		const middleware = createHypernovaMiddleware({
 			renderer: {
@@ -34,7 +51,7 @@ describe('createHypernovaMiddleware()', () => {
 		expect(typeof middleware).toBe('function');
 	});
 
-	it('should return a middleware function when called.', done => {
+	it('should call the renderer.render method and provide it with the requestProps from the createRequestProps option.', done => {
 		const html = '<div>foo</div>';
 		const requestProps = {};
 		const options = {
