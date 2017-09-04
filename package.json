@@ -1,0 +1,53 @@
+{
+  "name": "@immowelt/hypernova-express",
+  "version": "0.0.0-development",
+  "private": false,
+  "author": "Immonet dev team <aegaeon@immonet.de> (https://immonet.de)",
+  "license": "UNLICENSED",
+  "description": "An express middleware which handles server side rendering via Hypernova from AirBnB.",
+  "main": "./dist/",
+  "scripts": {
+    "test": "npm run lint && npm run flow && npm run jest:coverage",
+    "lint": "eslint src",
+    "jest": "jest",
+    "jest:watch": "npm run jest -- --watch",
+    "jest:coverage": "npm run jest -- --coverage",
+    "build:clean": "rimraf dist",
+    "build:babel": "babel src --out-dir dist --ignore spec.js",
+    "build:flow": "flow-copy-source -v src dist --ignore='*.spec.js'",
+    "prebuild": "npm run build:clean",
+    "build": "npm run build:babel && npm run build:flow",
+    "flow": "flow",
+    "flow-typed": "flow-typed",
+    "flow-typed-install": "flow-typed install --ignoreDeps=bundled peer --overwrite",
+    "prepare": "npm run flow-typed-install || true"
+  },
+  "engines": {
+    "node": ">=8.3.0",
+    "npm": ">=5.3.0"
+  },
+  "keywords": [],
+  "dependencies": {
+    "@immowelt/babel-preset-immowelt": "^1.0.2",
+    "babel-cli": "^6.26.0",
+    "flow-copy-source": "^1.2.1",
+    "log-fancy": "^1.1.2",
+    "pify": "^3.0.0"
+  },
+  "devDependencies": {
+    "@immowelt/eslint-config-immowelt-react": "^1.0.1",
+    "@immowelt/jest-preset-node": "^1.0.0",
+    "eslint": "^4.4.1",
+    "express": "^4.15.3",
+    "flow-bin": "^0.53.0",
+    "flow-typed": "^2.1.2",
+    "mock-fs": "^4.4.1",
+    "jest": "^20.0.4",
+    "sinon": "^3.2.1",
+    "rimraf": "^2.6.1",
+    "supertest": "^3.0.0"
+  },
+  "jest": {
+    "preset": "@immowelt/jest-preset-node"
+  }
+}
