@@ -1,5 +1,6 @@
 # @immowelt/hypernova-express
 
+[![Powered by Immowelt](https://img.shields.io/badge/powered%20by-immowelt-yellow.svg?colorB=ffb200)](https://stackshare.io/immowelt-group/)
 [![Greenkeeper badge](https://badges.greenkeeper.io/ImmoweltHH/hypernova-express.svg)](https://greenkeeper.io/)
 [![Build Status](https://travis-ci.org/ImmoweltHH/hypernova-express.svg?branch=master)](https://travis-ci.org/ImmoweltHH/hypernova-express)
 [![Dependency Status](https://david-dm.org/ImmoweltHH/hypernova-express.svg)](https://david-dm.org/ImmoweltHH/hypernova-express)
