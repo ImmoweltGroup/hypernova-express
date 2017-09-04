@@ -21,6 +21,7 @@
     "flow-typed": "flow-typed",
     "flow-typed-install": "flow-typed install --ignoreDeps=bundled peer --overwrite",
     "prepare": "npm run flow-typed-install || true",
+    "prepublishOnly": "npm run build",
     "semantic-release": "semantic-release pre && npm publish --access=public && semantic-release post"
   },
   "engines": {
