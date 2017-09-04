@@ -20,7 +20,8 @@
     "flow": "flow",
     "flow-typed": "flow-typed",
     "flow-typed-install": "flow-typed install --ignoreDeps=bundled peer --overwrite",
-    "prepare": "npm run flow-typed-install || true"
+    "prepare": "npm run flow-typed-install || true",
+    "semantic-release": "semantic-release pre && npm publish --access=public && semantic-release post"
   },
   "engines": {
     "node": ">=8.3.0",
@@ -36,6 +37,8 @@
   "devDependencies": {
     "@immowelt/eslint-config-immowelt-react": "^1.0.1",
     "@immowelt/jest-preset-node": "^1.0.0",
+    "@inkdpixels/commit-analyzer": "^1.0.0",
+    "@inkdpixels/release-notes-generator": "^1.0.0",
     "eslint": "^4.4.1",
     "express": "^4.15.3",
     "flow-bin": "^0.54.0",
@@ -44,9 +47,18 @@
     "jest": "^20.0.4",
     "sinon": "^3.2.1",
     "rimraf": "^2.6.1",
-    "supertest": "^3.0.0"
+    "supertest": "^3.0.0",
+    "semantic-release": "^7.0.2"
+  },
+  "release": {
+    "analyzeCommits": "@inkdpixels/commit-analyzer",
+    "generateNotes": "@inkdpixels/release-notes-generator"
   },
   "jest": {
     "preset": "@immowelt/jest-preset-node"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ImmoweltGroup/hypernova-express.git"
   }
 }
