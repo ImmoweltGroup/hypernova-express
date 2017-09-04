@@ -11,7 +11,6 @@ type OptsType = {
 	templateMarker?: string
 };
 
-const logger = require('log-fancy')('@immowelt/hypernova-express');
 const pify = require('pify');
 const fs = require('fs');
 const readFile = pify(fs.readFile);
