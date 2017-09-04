@@ -1,6 +1,6 @@
 # @immowelt/hypernova-express
 
-> An express middleware which handles server side rendering via Hypernova from AirBnB.
+> An express middleware which handles server side rendering via [Hypernova](https://github.com/airbnb/hypernova) from AirBnB.
 
 ## Usage
 To install the middleware just execute the following command in your workspace.
