@@ -2,7 +2,7 @@ const request = require('supertest');
 const mockFs = require('mock-fs');
 const sinon = require('sinon');
 const express = require('express');
-const createHypernovaMiddleware = require('./ssr.js');
+const createHypernovaMiddleware = require('./index.js');
 
 describe('createHypernovaMiddleware()', () => {
 	beforeEach(() => {
