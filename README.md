@@ -2,9 +2,9 @@
 
 [![Powered by Immowelt](https://img.shields.io/badge/powered%20by-immowelt-yellow.svg?colorB=ffb200)](https://stackshare.io/immowelt-group/)
 [![Greenkeeper badge](https://badges.greenkeeper.io/ImmoweltGroup/hypernova-express.svg)](https://greenkeeper.io/)
-[![Build Status](https://travis-ci.org/ImmoweltHH/hypernova-express.svg?branch=master)](https://travis-ci.org/ImmoweltHH/hypernova-express)
-[![Dependency Status](https://david-dm.org/ImmoweltHH/hypernova-express.svg)](https://david-dm.org/ImmoweltHH/hypernova-express)
-[![devDependency Status](https://david-dm.org/ImmoweltHH/hypernova-express/dev-status.svg)](https://david-dm.org/ImmoweltHH/hypernova-express#info=devDependencies&view=table)
+[![Build Status](https://travis-ci.org/ImmoweltGroup/hypernova-express.svg?branch=master)](https://travis-ci.org/ImmoweltGroup/hypernova-express)
+[![Dependency Status](https://david-dm.org/ImmoweltGroup/hypernova-express.svg)](https://david-dm.org/ImmoweltGroup/hypernova-express)
+[![devDependency Status](https://david-dm.org/ImmoweltGroup/hypernova-express/dev-status.svg)](https://david-dm.org/ImmoweltGroup/hypernova-express#info=devDependencies&view=table)
 
 > An express middleware which handles server side rendering via [Hypernova](https://github.com/airbnb/hypernova) from AirBnB.
 
@@ -58,7 +58,7 @@ The required renderer instance of `hypernova-client`.
 
 ## Code style
 Please make sure that you adhere to our code style, you can validate your changes / PR by executing `npm run lint`.
-Visit the [hypernova-express](https://github.com/ImmoweltHH/hypernova-express) package for more information.
+Visit the [hypernova-express](https://github.com/ImmoweltGroup/hypernova-express) package for more information.
 
 ## Licensing
 See the `LICENSE` file at the root of the repository.
