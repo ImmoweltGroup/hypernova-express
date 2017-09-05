@@ -13,7 +13,11 @@ type OptsType = {
 
 const pify = require('pify');
 const fs = require('fs');
+
 const readFile = pify(fs.readFile);
+const err = (msg: string) => {
+	throw new Error(`createHypernovaMiddleware(): ${msg}`);
+};
 
 function createHypernovaMiddleware(opts: OptsType) {
 	const {
@@ -24,15 +28,15 @@ function createHypernovaMiddleware(opts: OptsType) {
 	} = (opts || {});
 
 	if (!renderer || typeof renderer !== 'object' || typeof renderer.render !== 'function') {
-		throw new Error(`createSsrMiddleware(): Option "renderer" must be an instance of the hypernova-client Class.`);
+		err(`Option "renderer" must be an instance of the hypernova-client Class.`);
 	}
 
 	if (typeof templatePath !== 'string') {
-		throw new Error(`createSsrMiddleware(): Option "templatePath" must be a string pointing to the HTML template to use when creating the finalized HTML.`);
+		err(`Option "templatePath" must be a string pointing to the HTML template to use when creating the finalized HTML.`);
 	}
 
 	if (typeof createRequestProps !== 'function') {
-		throw new Error(`createSsrMiddleware(): Option "createRequestProps" must be a function that resolves with the renderer props/query.`);
+		err(`Option "createRequestProps" must be a function that resolves with the renderer props/query.`);
 	}
 
 	return (req: $Request, res: $Response) => {
