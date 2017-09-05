@@ -41,8 +41,13 @@ app.get('/', createHypernovaMiddleware({
 }));
 ```
 
-## Configuration
+## API
 As seen in the example you can configure the middleware just like any express middleware by passing in an options object.
+
+### `createHypernovaMiddleware()`
+```js
+const createHypernovaMiddleware = require('@immowelt/hypernova-express');
+```
 
 #### `opts.createRequestProps`
 A required function that returns a `Promise` which will resolve with the query/props for the hypernova renderer. The function gets called with the incomming request object from express is the best place to prepare or fetch props for your Component/App that shall be rendered.

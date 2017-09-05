@@ -19,6 +19,12 @@ const err = (msg: string) => {
 	throw new Error(`createHypernovaMiddleware(): ${msg}`);
 };
 
+/**
+ * Creates the express middleware to which handles server side rendering via Hypernova.
+ *
+ * @param  {Object}   opts The options object which configures the middleware.
+ * @return {Function}      The configured express middleware.
+ */
 function createHypernovaMiddleware(opts: OptsType) {
 	const {
 		renderer,
