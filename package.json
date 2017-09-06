@@ -9,6 +9,7 @@
   "scripts": {
     "test": "npm run lint && npm run flow && npm run jest:coverage",
     "lint": "eslint src",
+    "prettier": "prettier --write src/**/*.js",
     "jest": "jest",
     "jest:watch": "npm run jest -- --watch",
     "jest:coverage": "npm run jest -- --coverage",
@@ -22,7 +23,14 @@
     "flow-typed-install": "flow-typed install --ignoreDeps=bundled peer --overwrite",
     "prepare": "npm run flow-typed-install || true",
     "prepublishOnly": "npm run build",
-    "semantic-release": "semantic-release pre && npm publish --access=public && semantic-release post"
+    "semantic-release": "semantic-release pre && npm publish --access=public && semantic-release post",
+    "precommit": "lint-staged && npm test"
+  },
+  "lint-staged": {
+    "src/**/*.{js,json,css}": [
+      "prettier --write",
+      "git add"
+    ]
   },
   "engines": {
     "node": ">=8.3.0",
@@ -36,20 +44,24 @@
     "pify": "^3.0.0"
   },
   "devDependencies": {
-    "@immowelt/eslint-config-immowelt-react": "^1.0.1",
+    "@immowelt/eslint-config-immowelt-react": "^2.0.0",
     "@immowelt/jest-preset-node": "^1.0.0",
+    "@immowelt/styleguide-javascript": "^1.0.6",
     "@inkdpixels/commit-analyzer": "^1.0.0",
     "@inkdpixels/release-notes-generator": "^1.0.0",
     "eslint": "^4.4.1",
     "express": "^4.15.3",
     "flow-bin": "^0.54.0",
     "flow-typed": "^2.1.2",
-    "mock-fs": "^4.4.1",
+    "husky": "^0.14.3",
     "jest": "^21.0.0",
-    "sinon": "^3.2.1",
+    "lint-staged": "^4.1.2",
+    "mock-fs": "^4.4.1",
+    "prettier": "^1.6.1",
     "rimraf": "^2.6.1",
-    "supertest": "^3.0.0",
-    "semantic-release": "^7.0.2"
+    "semantic-release": "^7.0.2",
+    "sinon": "^3.2.1",
+    "supertest": "^3.0.0"
   },
   "release": {
     "analyzeCommits": "@inkdpixels/commit-analyzer",
