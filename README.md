@@ -22,12 +22,19 @@ const express = require('express');
 const path = require('path');
 const Renderer = require('hypernova-client');
 const createHypernovaMiddleware = require('@immowelt/hypernova-express');
+const fetch = require('node-fetch');
 
 const app = express();
 
 app.get('/', createHypernovaMiddleware({
-	createRequestProps: (req) => {
+	createRequestProps: async (req) => {
 		const componentProps = {};
+
+		try {
+			const res = await fetch('fetch/some/thing.json');
+
+			componentProps.data = await res.json();
+		} catch (e) {}
 
 		return Promise.resolve({
 			myRegisteredComponent: componentProps
