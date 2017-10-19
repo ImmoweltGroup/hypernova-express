@@ -38,7 +38,7 @@
   },
   "keywords": [],
   "dependencies": {
-    "@immowelt/babel-preset-immowelt": "^1.0.2",
+    "@immowelt/babel-preset-immowelt-node": "^1.0.1",
     "babel-cli": "^6.26.0",
     "flow-copy-source": "^1.2.1",
     "pify": "^3.0.0"
