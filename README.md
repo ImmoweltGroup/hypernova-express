@@ -5,6 +5,7 @@
 [![Build Status](https://travis-ci.org/ImmoweltGroup/hypernova-express.svg?branch=master)](https://travis-ci.org/ImmoweltGroup/hypernova-express)
 [![Dependency Status](https://david-dm.org/ImmoweltGroup/hypernova-express.svg)](https://david-dm.org/ImmoweltGroup/hypernova-express)
 [![devDependency Status](https://david-dm.org/ImmoweltGroup/hypernova-express/dev-status.svg)](https://david-dm.org/ImmoweltGroup/hypernova-express#info=devDependencies&view=table)
+[![semantic-release](https://img.shields.io/badge/%20%20%F0%9F%93%A6%F0%9F%9A%80-semantic--release-e10079.svg)](https://github.com/semantic-release/semantic-release)
 
 > An express middleware which handles server side rendering via [Hypernova](https://github.com/airbnb/hypernova) from AirBnB.
 
@@ -68,9 +69,8 @@ The piece of markup that will be replaced with the HTML retrieved from the Hyper
 #### `opts.renderer`
 The required renderer instance of `hypernova-client`.
 
-## Code style
-Please make sure that you adhere to our code style, you can validate your changes / PR by executing `npm run lint`.
-Visit the [hypernova-express](https://github.com/ImmoweltGroup/hypernova-express) package for more information.
+## Contributing
+See the `CONTRIBUTING.md` file at the root of the repository.
 
 ## Licensing
 See the `LICENSE` file at the root of the repository.
