@@ -54,13 +54,12 @@
     "flow-bin": "^0.59.0",
     "flow-typed": "^2.1.2",
     "husky": "^0.14.3",
-    "jest": "^21.0.0",
+    "jest": "^21.2.1",
     "lint-staged": "^5.0.0",
     "mock-fs": "^4.4.1",
     "prettier": "^1.6.1",
     "rimraf": "^2.6.1",
     "semantic-release": "^8.0.0",
-    "sinon": "^4.0.0",
     "supertest": "^3.0.0"
   },
   "release": {

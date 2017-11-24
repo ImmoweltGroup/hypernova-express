@@ -1,6 +1,5 @@
 const request = require('supertest');
 const mockFs = require('mock-fs');
-const sinon = require('sinon');
 const express = require('express');
 const createHypernovaMiddleware = require('./index.js');
 
@@ -59,9 +58,9 @@ describe('createHypernovaMiddleware()', () => {
     const requestProps = {};
     const options = {
       renderer: {
-        render: sinon.spy(() => Promise.resolve(html))
+        render: jest.fn(() => Promise.resolve(html))
       },
-      createRequestProps: sinon.spy(() => Promise.resolve(requestProps)),
+      createRequestProps: jest.fn(() => Promise.resolve(requestProps)),
       templatePath: '/foo/bar/index.html'
     };
     const app = express();
@@ -71,9 +70,9 @@ describe('createHypernovaMiddleware()', () => {
     request(app)
       .get('/')
       .expect(200, `<html>${html}</html>`, err => {
-        expect(options.createRequestProps.callCount).toBe(1);
-        expect(options.renderer.render.callCount).toBe(1);
-        expect(options.renderer.render.args[0][0]).toBe(requestProps);
+        expect(options.createRequestProps).toHaveBeenCalledTimes(1);
+        expect(options.renderer.render).toHaveBeenCalledTimes(1);
+        expect(options.renderer.render).toHaveBeenCalledWith(requestProps);
 
         done(err);
       });
