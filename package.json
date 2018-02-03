@@ -48,7 +48,7 @@
     "@immowelt/styleguide-javascript": "1.0.11",
     "@inkdpixels/commit-analyzer": "1.0.1",
     "@inkdpixels/release-notes-generator": "1.0.1",
-    "eslint": "4.16.0",
+    "eslint": "4.17.0",
     "express": "4.16.2",
     "flow-bin": "0.64.0",
     "flow-typed": "2.3.0",
