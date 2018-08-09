@@ -40,7 +40,7 @@
     "@immowelt/babel-preset-immowelt-node": "^1.0.1",
     "babel-cli": "^6.26.0",
     "flow-copy-source": "^1.2.1",
-    "pify": "^3.0.0"
+    "pify": "^4.0.0"
   },
   "devDependencies": {
     "@immowelt/eslint-config-immowelt-react": "2.0.4",
