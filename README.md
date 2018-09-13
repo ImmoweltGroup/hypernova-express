@@ -10,10 +10,11 @@
 > An express middleware which handles server side rendering via [Hypernova](https://github.com/airbnb/hypernova) from AirBnB.
 
 ## Usage
+
 To install the middleware just execute the following command in your workspace.
 
 ```sh
-npm i -S @immowelt/hypernova-express
+yarn add @immowelt/hypernova-express --dev
 ```
 
 and configure your express server to use the middleware, e.g.
@@ -50,27 +51,35 @@ app.get('/', createHypernovaMiddleware({
 ```
 
 ## API
+
 As seen in the example you can configure the middleware just like any express middleware by passing in an options object.
 
 ### `createHypernovaMiddleware()`
+
 ```js
 const createHypernovaMiddleware = require('@immowelt/hypernova-express');
 ```
 
 #### `opts.createRequestProps`
+
 A required function that returns a `Promise` which will resolve with the query/props for the hypernova renderer. The function gets called with the incomming request object from express is the best place to prepare or fetch props for your Component/App that shall be rendered.
 
 #### `opts.templatePath`
+
 A required full file-system path to the base template you want to wrap around the response of Hypernova.
 
 #### `opts.templateMarker` (optional)
+
 The piece of markup that will be replaced with the HTML retrieved from the Hypernova service.
 
 #### `opts.renderer`
+
 The required renderer instance of `hypernova-client`.
 
 ## Contributing
+
 See the `CONTRIBUTING.md` file at the root of the repository.
 
 ## Licensing
+
 See the `LICENSE` file at the root of the repository.

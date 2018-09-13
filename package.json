@@ -7,66 +7,78 @@
   "description": "An express middleware which handles server side rendering via Hypernova from AirBnB.",
   "main": "./dist/",
   "scripts": {
-    "test": "yarn run lint && yarn run flow && yarn run jest:coverage",
+    "test": "jest",
     "lint": "eslint src",
     "prettier": "prettier --write src/**/*.js",
-    "jest": "jest",
-    "jest:watch": "yarn run jest -- --watch",
-    "jest:coverage": "yarn run jest -- --coverage",
-    "build:clean": "rimraf dist",
-    "build:babel": "babel src --out-dir dist --ignore spec.js",
-    "build:flow": "flow-copy-source -v src dist --ignore='*.spec.js'",
-    "prebuild": "yarn run build:clean",
-    "build": "yarn run build:babel && yarn run build:flow",
+    "clean": "rimraf dist",
+    "build": "babel src --out-dir dist --ignore spec.js && flow-copy-source -v src dist --ignore='*.spec.js'",
+    "prebuild": "yarn clean",
     "flow": "flow",
     "flow-typed": "flow-typed",
     "flow-typed-install": "flow-typed install --ignoreDeps=bundled peer --overwrite",
-    "prepare": "yarn run flow-typed-install || true",
-    "prepublishOnly": "yarn run build",
-    "semantic-release": "semantic-release pre && npm publish --access=public && semantic-release post",
-    "precommit": "lint-staged && npm test"
+    "prepare": "yarn flow-typed-install || true",
+    "prepublishOnly": "yarn build",
+    "release": "semantic-release"
   },
-  "lint-staged": {
-    "src/**/*.{js,json,css}": [
-      "prettier --write",
-      "git add"
-    ]
-  },
+  "files": [
+    "dist"
+  ],
   "engines": {
-    "node": ">=8.3.0"
+    "node": ">=8.11.4",
+    "yarn": ">=1.6.0"
   },
-  "keywords": [],
+  "keywords": [
+    "express",
+    "hypernova"
+  ],
   "dependencies": {
-    "@immowelt/babel-preset-immowelt-node": "^1.0.1",
-    "babel-cli": "^6.26.0",
-    "flow-copy-source": "^1.2.1",
-    "pify": "^3.0.0"
+    "@immowelt/babel-preset-immowelt-node": "1.1.1",
+    "babel-cli": "6.26.0",
+    "flow-copy-source": "2.0.2",
+    "pify": "4.0.0"
   },
   "devDependencies": {
-    "@immowelt/eslint-config-immowelt-react": "2.0.4",
-    "@immowelt/jest-preset-node": "1.0.1",
-    "@immowelt/styleguide-javascript": "1.0.11",
-    "@inkdpixels/commit-analyzer": "1.0.1",
-    "@inkdpixels/release-notes-generator": "1.0.1",
+    "@immowelt/eslint-config-immowelt-react": "2.1.1",
+    "@immowelt/jest-preset-node": "1.1.1",
     "eslint": "5.5.0",
     "express": "4.16.3",
     "flow-bin": "0.80.0",
     "flow-typed": "2.5.1",
-    "husky": "0.14.3",
     "jest": "23.6.0",
-    "lint-staged": "6.1.1",
     "mock-fs": "4.7.0",
     "prettier": "1.14.2",
     "rimraf": "2.6.2",
-    "semantic-release": "^8.0.0",
+    "semantic-release": "13.4.1",
     "supertest": "3.3.0"
-  },
-  "release": {
-    "analyzeCommits": "@inkdpixels/commit-analyzer",
-    "generateNotes": "@inkdpixels/release-notes-generator"
   },
   "jest": {
     "preset": "@immowelt/jest-preset-node"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "release": {
+    "branch": "master",
+    "analyzeCommits": {
+      "releaseRules": [
+        {
+          "type": "BREAKING",
+          "release": "major"
+        },
+        {
+          "type": "FEATURE",
+          "release": "minor"
+        },
+        {
+          "type": "BUGFIX",
+          "release": "patch"
+        },
+        {
+          "type": "SECURITY",
+          "release": "patch"
+        }
+      ]
+    }
   },
   "repository": {
     "type": "git",

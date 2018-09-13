@@ -1,10 +1,16 @@
-node_modules
-flow-typed/npm
-coverage
-dist
+# See https://help.github.com/ignore-files/ for more about ignoring files.
 
-# Ignore the symlink ".editorconfig" from the @immowelt/styleguide-javascript package.
-.editorconfig
+# dependencies
+/node_modules/
 
-# Ignore the symlink ".prettierrc" from the @immowelt/styleguide-javascript package.
-.prettierrc
+# third party typings
+/flow-typed/
+
+# compiled assets
+/dist/
+
+# test results
+/coverage/
+
+# IDEs
+/.idea/
