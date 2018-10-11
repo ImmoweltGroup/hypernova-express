@@ -41,7 +41,7 @@
     "@immowelt/eslint-config-immowelt-react": "2.1.1",
     "@immowelt/jest-preset-node": "1.1.1",
     "eslint": "5.6.1",
-    "express": "4.16.3",
+    "express": "4.16.4",
     "flow-bin": "0.82.0",
     "flow-typed": "2.5.1",
     "jest": "23.6.0",
