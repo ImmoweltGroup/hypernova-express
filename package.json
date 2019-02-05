@@ -44,7 +44,7 @@
     "express": "4.16.4",
     "flow-bin": "0.92.1",
     "flow-typed": "2.5.1",
-    "jest": "23.6.0",
+    "jest": "24.1.0",
     "mock-fs": "4.8.0",
     "prettier": "1.16.4",
     "rimraf": "2.6.3",
